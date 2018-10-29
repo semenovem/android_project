@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_article"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_article"
+    android:padding="@dimen/indent_xs"
+    android:layout_margin="@dimen/indent_xs"
+    card_view:cardCornerRadius="@dimen/preview_article_corner_radius"
+    card_view:contentPadding="@dimen/indent_s"
+    card_view:cardElevation="@dimen/preview_article_card_elevation">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/typoTitleH3Caps"
+            android:layout_marginBottom="@dimen/indent_xs"
+            tools:text="category"/>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/typoTitleH2Bold"
+                    android:layout_marginBottom="@dimen/indent_xs"
+                    tools:text="title"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    style="@style/typoTextCommon"
+                    android:layout_marginBottom="@dimen/indent_xs"
+                    tools:text="preview"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/publish_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Yesterday 12:45 AM"
+                    style="@style/typoSecondNonActive" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/preview_article_image_width"
+                android:layout_height="@dimen/preview_article_image_height"
+                android:layout_marginStart="@dimen/indent_s"
+                tools:src="@tools:sample/avatars" />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.CardView>
