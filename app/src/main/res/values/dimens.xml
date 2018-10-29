@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ava_height">250dp</dimen>
+    <dimen name="indent_s">8dp</dimen>
+    <dimen name="indent_m">16dp</dimen>
+</resources>
