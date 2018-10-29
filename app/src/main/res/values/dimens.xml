@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="indent_s">8dp</dimen>
+    <dimen name="indent_m">16dp</dimen>
+    <dimen name="indent_l">32dp</dimen>
+</resources>

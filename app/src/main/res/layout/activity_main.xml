@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="@dimen/indent_s"
+    android:orientation="vertical"
+    android:background="@drawable/gradient">
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_describe"
+            android:theme="@style/custom_text" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/input_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginStart="@dimen/indent_l"
+            android:theme="@style/custom_input_length"
+            android:singleLine="true" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_m"
+        tools:text="Here user write message\ncan wrote multi line, but why..."/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/buttonPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_preview_sign"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+</android.support.v7.widget.LinearLayoutCompat>
