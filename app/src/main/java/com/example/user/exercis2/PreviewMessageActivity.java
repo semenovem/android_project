@@ -34,8 +34,8 @@ public class PreviewMessageActivity extends AppCompatActivity {
 
     private void openMail(String message) {
         final Intent intent = new Intent(Intent.ACTION_SENDTO)
-                .setData(Uri.parse(String.format("mailto:%s", getString(R.string.email_address))))
-                .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
+                .setData(Uri.parse(String.format("mailto:%s", getString(R.string.about_email_address))))
+                .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.about_email_subject))
                 .putExtra(Intent.EXTRA_TEXT, message);
 
         if (intent.resolveActivity(getPackageManager()) != null) {

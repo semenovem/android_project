@@ -27,6 +27,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/button_send_email_sign"/>
+        android:text="@string/about_button_send_email_sign"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -74,20 +74,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/indent_m"
-                android:text="@string/about" />
+                android:text="@string/about_text" />
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/input_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/indent_m"
-                android:hint="@string/enter_message_hint"/>
+                android:hint="@string/about_enter_message_hint"/>
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/button_send_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_show_preview"
+                android:text="@string/about_button_show_preview"
                 android:background="@null"
                 android:layout_gravity="end"/>
         </android.support.v7.widget.LinearLayoutCompat>
