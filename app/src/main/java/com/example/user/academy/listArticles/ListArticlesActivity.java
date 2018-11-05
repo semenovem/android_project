@@ -1,19 +1,21 @@
 package com.example.user.academy.listArticles;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.user.academy.FullArticleActivity;
+import com.example.user.academy.fullArticle.FullArticleActivity;
 import com.example.user.academy.R;
 import com.example.user.academy.data.DataUtils;
 
-public class Activity extends AppCompatActivity {
+public class ListArticlesActivity extends AppCompatActivity {
 
     // todo can be do easier ?
-    private final Adapter.OnItemClickListener clickListener = article -> {
+    private final ListArticlesAdapter.OnItemClickListener clickListener = article -> {
         String articlePackToJson = article.toJson();
         openDetailsArticle(articlePackToJson);
     };
@@ -29,7 +31,7 @@ public class Activity extends AppCompatActivity {
         }
 
         RecyclerView recyclerView = findViewById(R.id.list_articles);
-        recyclerView.setAdapter(new Adapter(this, DataUtils.generateArticles(), clickListener));
+        recyclerView.setAdapter(new ListArticlesAdapter(this, DataUtils.generateArticles(), clickListener));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -42,5 +44,10 @@ public class Activity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    public static void start(Activity activity) {
+        Intent intent = new Intent(activity, ListArticlesActivity.class);
+        activity.startActivity(intent);
     }
 }

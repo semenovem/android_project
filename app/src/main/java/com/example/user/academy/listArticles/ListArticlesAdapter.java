@@ -18,7 +18,7 @@ import com.example.user.academy.data.Article;
 import java.util.List;
 
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class ListArticlesAdapter extends RecyclerView.Adapter<ListArticlesAdapter.ViewHolder> {
     @NonNull
     private final List<Article> articles;
     @NonNull
@@ -32,9 +32,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         void onItemClick(Article article);
     }
 
-    Adapter(@NonNull Context context,
-                               @NonNull List<Article> articles,
-                               @Nullable OnItemClickListener clickListener) {
+    ListArticlesAdapter(@NonNull Context context,
+                        @NonNull List<Article> articles,
+                        @Nullable OnItemClickListener clickListener) {
         this.articles = articles;
         this.inflater = LayoutInflater.from(context);
         this.clickListener = clickListener;

@@ -1,4 +1,4 @@
-package com.example.user.academy;
+package com.example.user.academy.fullArticle;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.user.academy.R;
 import com.example.user.academy.data.Article;
 
 public class FullArticleActivity extends AppCompatActivity {
@@ -26,13 +27,14 @@ public class FullArticleActivity extends AppCompatActivity {
         }
         catch (Exception e) {
             // show error
+            // maybe be shown another activity ?
 
             return;
         }
 
         setContentView(R.layout.activity_full_article);
 
-        // todo Glade need to remove overhead
+        // --- todo Glade need to remove overhead
         ImageView imageView = findViewById(R.id.image);
         RequestOptions imageOption = new RequestOptions()
                 .placeholder(R.drawable.ic_preloader)
@@ -40,6 +42,7 @@ public class FullArticleActivity extends AppCompatActivity {
                 .centerCrop();
         RequestManager imageLoader = Glide.with(this).applyDefaultRequestOptions(imageOption);
         imageLoader.load(article.getImageUrl()).into(imageView);
+        // ---
 
         TextView titleView = findViewById(R.id.title);
         titleView.setText(article.getTitle());
