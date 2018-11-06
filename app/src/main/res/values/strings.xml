@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">exercise#2</string>
+    <string name="about_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</string>
+    <string name="about_enter_message_hint">Enter a message</string>
+    <string name="about_button_send_email_sign">SEND MESSAGE</string>
+    <string name="about_button_show_preview">Show preview</string>
+
+    <string name="about_email_address" translatable="false">andr.academy.msk@gmail.com</string>
+    <string name="about_email_subject">Hello, Android Academy MSK!</string>
+    <string name="error_no_email_app">No Email apps were found.</string>
+</resources>
