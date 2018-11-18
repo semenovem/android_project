@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".previewAbout.PreviewAboutActivity">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/message_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/indent_s"
+        android:layout_marginBottom="@dimen/indent_s"
+        app:layout_constraintBottom_toTopOf="@+id/button_send_message"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="text message" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/indent_s"
+        android:layout_marginEnd="@dimen/indent_s"
+        android:layout_marginBottom="@dimen/indent_s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/about_button_send_email_sign"/>
+
+</android.support.constraint.ConstraintLayout>

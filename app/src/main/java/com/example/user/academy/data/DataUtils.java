@@ -1,18 +1,27 @@
 package com.example.user.academy.data;
 
+import android.accounts.NetworkErrorException;
+import android.util.Log;
+
+import com.example.user.academy.BuildConfig;
+import android.accounts.NetworkErrorException;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import io.reactivex.Single;
+
 public class DataUtils {
-    public static List<Article> generateArticles() {
+    public static List<Article> generateArticles() throws NetworkErrorException {
         final Category darwinAwards = new Category(1, "Darwin Awards");
         final Category criminal = new Category(2, "Criminal");
         final Category animals = new Category(3, "Animals");
         final Category music = new Category(4, "Music");
 
         List<Article> articles = new ArrayList<>();
+
         articles.add(new Article(
                 "Tourist filmed sitting on 5m-long crocodile",
                 "https://e3.365dm.com/18/09/736x414/skynews-crocodile-australia_4433218.jpg",
@@ -136,5 +145,26 @@ public class DataUtils {
 
     private static Date createDate(int year, int month, int date, int hrs, int min) {
         return new GregorianCalendar(year, month - 1, date, hrs, min).getTime();
+    }
+
+    public static Single<List<Article>> observeNews() {
+        return Single.create(emitter -> {
+            try {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    Log.e("tag_tag", e.getMessage(), e);
+                }
+                List<Article> news = generateArticles();
+                emitter.onSuccess(news);
+            } catch (NetworkErrorException ex) {
+                if (!emitter.tryOnError(ex) && BuildConfig.DEBUG) {
+                    // this is most transparent way to handle exceptions that may happen after disposing
+                    // see this discussion: https://github.com/ReactiveX/RxJava/issues/4880
+                    // alternatively, you can set RxJavaPlugins.setErrorHandler in you app class
+                    Log.e("DataUtils", "observeNews error handler caught an error", ex);
+                }
+            }
+        });
     }
 }

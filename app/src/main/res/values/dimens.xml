@@ -9,4 +9,9 @@
     <dimen name="preview_article_corner_radius">5dp</dimen>
     <dimen name="preview_article_card_elevation">5dp</dimen>
     <dimen name="article_image_height">200dp</dimen>
+
+
+    <dimen name="about_ava_height">250dp</dimen>
+
+
 </resources>

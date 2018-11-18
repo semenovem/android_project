@@ -15,12 +15,13 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.user.academy.R;
 import com.example.user.academy.data.Article;
-import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListArticlesAdapter extends RecyclerView.Adapter<ListArticlesAdapter.ViewHolder> {
     @NonNull
-    private final List<Article> articles;
+    private final List<Article> articles = new ArrayList<>();
     @NonNull
     private final LayoutInflater inflater;
     @Nullable
@@ -33,9 +34,7 @@ public class ListArticlesAdapter extends RecyclerView.Adapter<ListArticlesAdapte
     }
 
     ListArticlesAdapter(@NonNull Context context,
-                        @NonNull List<Article> articles,
                         @Nullable OnItemClickListener clickListener) {
-        this.articles = articles;
         this.inflater = LayoutInflater.from(context);
         this.clickListener = clickListener;
 
@@ -60,6 +59,12 @@ public class ListArticlesAdapter extends RecyclerView.Adapter<ListArticlesAdapte
     @Override
     public int getItemCount() {
         return articles.size();
+    }
+
+    public void replaceItems(@NonNull List<Article> newArticles) {
+        articles.clear();
+        articles.addAll(newArticles);
+        notifyDataSetChanged();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
