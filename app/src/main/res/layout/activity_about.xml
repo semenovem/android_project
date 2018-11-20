@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".about.AboutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/indent_xs"
+        android:layout_marginBottom="@dimen/indent_m">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/about_ava_height"
+            android:src="@drawable/avatar"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/indent_m"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/indent_s"
+                android:drawableStart="@drawable/ic_icon01"
+                android:text="Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/indent_s"
+                android:drawableStart="@drawable/ic_icon02"
+                android:text="Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet."/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/indent_s"
+                android:drawableStart="@drawable/ic_icon03"
+                android:text="Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                android:text="@string/about_text" />
+
+            <EditText
+                android:id="@+id/input_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_m"
+                android:hint="@string/about_enter_message_hint"
+                android:inputType="textMultiLine" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/button_send_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_button_show_preview"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

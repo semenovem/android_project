@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_article">140dp</dimen>
+    <dimen name="indent_xs">4dp</dimen>
+    <dimen name="indent_s">8dp</dimen>
+    <dimen name="indent_m">16dp</dimen>
+    <dimen name="preview_article_image_width">80dp</dimen>
+    <dimen name="preview_article_image_height">80dp</dimen>
+    <dimen name="preview_article_corner_radius">5dp</dimen>
+    <dimen name="preview_article_card_elevation">5dp</dimen>
+    <dimen name="article_image_height">200dp</dimen>
+
+
+    <dimen name="about_ava_height">250dp</dimen>
+    <dimen name="card_article_pending_category">180dp</dimen>
+    <dimen name="card_article_pending_publish_date">180dp</dimen>
+
+    <dimen name="error_text_h2">48sp</dimen>
+
+
+</resources>
