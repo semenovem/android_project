@@ -14,15 +14,22 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".listArticles.ListArticlesActivity" >
+        <activity android:name="com.example.user.academy.mainActivity.MainActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity android:name=".listArticles.ListArticlesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".fullArticle.FullArticleActivity" />
-        <activity android:name=".about.AboutActivity"/>
-        <activity android:name=".previewAbout.PreviewAboutActivity"/>
+        <activity android:name=".about.AboutActivity" />
+        <activity android:name=".previewAbout.PreviewAboutActivity" />
     </application>
+
 </manifest>

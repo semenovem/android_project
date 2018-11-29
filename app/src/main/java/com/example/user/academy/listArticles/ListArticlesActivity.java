@@ -1,7 +1,5 @@
 package com.example.user.academy.listArticles;
 
-import android.accounts.NetworkErrorException;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -16,7 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.Button;
 
 import com.example.user.academy.about.AboutActivity;
 import com.example.user.academy.data.Article;
@@ -39,7 +37,8 @@ public class ListArticlesActivity extends AppCompatActivity {
     private final static String DEBUG_TAG = ListArticlesActivity.class.getSimpleName();
 
     private ListArticlesAdapter adapter;
-    private AnimViewOpacity animPendind;
+    private AnimViewOpacity animPending;
+    private Button btnOpenSelectSection;
 
     @Nullable
     private Disposable disposable;
@@ -58,6 +57,15 @@ public class ListArticlesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_articles);
 
+//        todo move logic in `LifecycleObserver`
+//        ListArticlesLifecycle engine = new ListArticlesLifecycle();
+//        getLifecycle().addObserver(engine);
+
+        btnOpenSelectSection = findViewById(R.id.btn_open_select_section);
+        btnOpenSelectSection.setText("HOME");
+
+        btnOpenSelectSection.setOnClickListener(view -> openSelectSection());
+
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(false);
@@ -68,7 +76,7 @@ public class ListArticlesActivity extends AppCompatActivity {
         viewRecycler = findViewById(R.id.list_articles);
 
         manageView = new ViewVisibleOnlyOne(findViewById(R.id.frame_list_articles));
-        animPendind = new AnimViewOpacity(this, viewProgress);
+        animPending = new AnimViewOpacity(this, viewProgress);
 
         adapter = new ListArticlesAdapter(this, clickListener);
         viewRecycler.setAdapter(adapter);
@@ -97,13 +105,13 @@ public class ListArticlesActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         loadItems();
-        animPendind.start();
+        animPending.start();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        animPendind.stop();
+        animPending.stop();
     }
 
     public static void start(Activity activity) {
@@ -155,5 +163,12 @@ public class ListArticlesActivity extends AppCompatActivity {
             adapter.replaceItems(news);
             manageView.on(viewRecycler);
         }
+    }
+
+    private void openSelectSection() {
+        System.out.println("test");
+
+        DialogSelectSection newFragment = new DialogSelectSection();
+        newFragment.show(getSupportFragmentManager(), "missiles");
     }
 }
